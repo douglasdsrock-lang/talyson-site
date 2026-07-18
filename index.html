@@ -34,6 +34,11 @@
             --text-secondary: #A0A0A0;
         }
 
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
         body {
             background: var(--dark);
             position: relative;
@@ -290,18 +295,18 @@
     <div class="ambient-orb orb-2"></div>
 
     <!-- Cinematic Hero Section -->
-    <section class="relative w-full min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-40 px-4">
+    <section class="relative w-full min-h-[90vh] flex flex-col items-center justify-center pt-16 md:pt-32 pb-24 md:pb-40 px-4">
         <!-- Background Image with Dark Gradient Overlay -->
         <div class="absolute inset-0 z-0">
             <img src="assets/background.webp" alt="Talyson - Alta Sociedade" class="w-full h-full object-cover object-center opacity-40 mix-blend-screen">
             <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/80 to-black"></div>
         </div>
 
-        <div class="max-w-6xl mx-auto relative z-10 text-center w-full mt-10">
+        <div class="max-w-6xl mx-auto relative z-10 text-center w-full mt-4 md:mt-10">
             <!-- Live / Social proof indicator -->
-            <div class="inline-flex items-center gap-2 glass-card px-6 py-3 rounded-full mb-10 slide-up border border-green-500/20">
-                <span class="live-dot"></span>
-                <span class="text-sm font-medium"><span id="watching">214</span> apostadores vendo essa página agora</span>
+            <div class="inline-flex items-center gap-2 glass-card px-4 sm:px-6 py-2.5 sm:py-3 rounded-full mb-8 sm:mb-10 slide-up border border-green-500/20 max-w-full">
+                <span class="live-dot shrink-0"></span>
+                <span class="text-xs sm:text-sm font-medium text-left"><span id="watching">214</span> apostadores vendo essa página agora</span>
             </div>
 
             <!-- Imposing Headline -->
@@ -310,9 +315,17 @@
                 <span class="animated-gradient-text text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-green-500 to-emerald-700">alguém do seu lado</span>
             </h1>
             
-            <p class="text-lg md:text-2xl text-gray-300 max-w-4xl mx-auto font-medium slide-up leading-relaxed mb-16" style="animation-delay: 0.4s;">
+            <p class="text-lg md:text-2xl text-gray-300 max-w-4xl mx-auto font-medium slide-up leading-relaxed mb-6" style="animation-delay: 0.4s;">
                 Aqui você <span class="text-money-green">não encontra promessas de dinheiro fácil</span>. Encontra uma comunidade para quem cansou de jogar sozinho. Um ambiente onde informação, atendimento, diversão, suporte e troca de experiências para quem busca <span class="text-money-green border-b border-green-500/50 pb-1">mais informação e jogo responsável</span>.
             </p>
+
+            <!-- Hero CTA Button -->
+            <div class="slide-up mb-12 px-4 flex justify-center" style="animation-delay: 0.5s;">
+                <a href="https://t.me/+F7xRIRKHySo1ODMx" target="_blank"
+                    class="premium-button flex items-center justify-center w-full sm:w-auto px-10 py-4 rounded-2xl font-bold text-base md:text-lg text-white shadow-2xl shadow-green-500/20">
+                    GARANTIR MINHA VAGA
+                </a>
+            </div>
 
             <!-- Floating Stats Bar -->
             <div class="glass-card rounded-2xl p-4 md:p-6 w-full max-w-5xl mx-auto slide-up shadow-2xl shadow-green-900/20" style="animation-delay: 0.6s;">
