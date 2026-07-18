@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Alta Sociedade — Comunidade de Apostador Sério de Roleta - Talyson</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://track4you.app/9de7324d-51cf-47c9-afa6-03a0cc59531b.js" defer></script>
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-display {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Design System Colors - Green & Black Theme (cap-v4-1: tudo que era vermelho virou verde, 16/07/2026) */
+        :root {
+            --primary: #22c55e;
+            --primary-dark: #15803d;
+            --money-green: #22c55e;
+            --dark: #000000;
+            --dark-card: #1A1A1A;
+            --text-primary: #FFFFFF;
+            --text-secondary: #A0A0A0;
+        }
+
+        body {
+            background: var(--dark);
+            position: relative;
+        }
+
+        /* Ambient Animated Orbs */
+        .ambient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.4;
+            z-index: 0;
+            animation: orb-float 20s infinite ease-in-out alternate;
+            pointer-events: none;
+        }
+        .orb-1 {
+            width: 40vw;
+            height: 40vw;
+            background: rgba(34, 197, 94, 0.2);
+            top: -5%;
+            left: -10%;
+        }
+        .orb-2 {
+            width: 50vw;
+            height: 50vw;
+            background: rgba(21, 128, 61, 0.15);
+            bottom: -10%;
+            right: -10%;
+            animation-delay: -10s;
+        }
+
+        @keyframes orb-float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(5%, 5%) scale(1.1); }
+        }
+
+        /* AAA Glassmorphism */
+        .glass-card {
+            background: linear-gradient(145deg, rgba(30, 30, 30, 0.7) 0%, rgba(20, 20, 20, 0.4) 100%);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 
+                0 4px 30px -1px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 12px 32px -4px rgba(34, 197, 94, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            border-color: rgba(34, 197, 94, 0.3);
+            background: rgba(34, 197, 94, 0.05);
+        }
+
+        .premium-button {
+            background: linear-gradient(135deg, #15803d, #22c55e 55%, #4ade80);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4), inset 0 1px 0 rgba(255,255,255,0.4);
+            animation: button-pulse 3s infinite;
+        }
+
+        @keyframes button-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4), inset 0 1px 0 rgba(255,255,255,0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0), inset 0 1px 0 rgba(255,255,255,0.4); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0), inset 0 1px 0 rgba(255,255,255,0.4); }
+        }
+
+        .premium-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 75%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+            transform: skewX(-25deg);
+            animation: button-shimmer 5s infinite;
+        }
+
+        @keyframes button-shimmer {
+            0% {
+                left: -100%;
+            }
+
+            20% {
+                left: 150%;
+            }
+
+            100% {
+                left: 150%;
+            }
+        }
+
+        .premium-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(34, 197, 94, 0.6), inset 0 1px 0 rgba(255,255,255,0.6);
+            letter-spacing: 0.5px;
+        }
+
+        .animated-gradient-text {
+            background-size: 200% auto;
+            animation: gradient-flow 4s ease-in-out infinite;
+        }
+
+        @keyframes gradient-flow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes slide-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-up {
+            animation: slide-up 0.6s ease-out forwards;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse-live 1.5s infinite;
+            box-shadow: 0 0 10px rgba(34, 197, 94, 0.7);
+        }
+
+        @keyframes pulse-live {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: scale(1.2);
+            }
+        }
+
+        .stat-card {
+            background: linear-gradient(145deg, rgba(34, 197, 94, 0.05), transparent);
+            border: 1px solid rgba(34, 197, 94, 0.15);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(34, 197, 94, 0.4);
+            box-shadow: 0 15px 35px -5px rgba(34, 197, 94, 0.15);
+        }
+
+
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .text-money-green {
+            color: var(--money-green);
+            font-weight: 700;
+        }
+
+        .countdown-box {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .toast-enter {
+            animation: toast-slide-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .toast-leave {
+            animation: toast-fade-out 0.4s ease-in forwards;
+        }
+
+        @keyframes toast-slide-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes toast-fade-out {
+            from {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+
+            to {
+                opacity: 0;
+                transform: translateY(10px) scale(0.95);
+            }
+        }
+
+        /* Carousel Styles */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white overflow-x-hidden">
+    <!-- Ambient Animated Orbs -->
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+
+    <!-- Cinematic Hero Section -->
+    <section class="relative w-full min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-40 px-4">
+        <!-- Background Image with Dark Gradient Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/background.webp" alt="Talyson - Alta Sociedade" class="w-full h-full object-cover object-center opacity-40 mix-blend-screen">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/80 to-black"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto relative z-10 text-center w-full mt-10">
+            <!-- Live / Social proof indicator -->
+            <div class="inline-flex items-center gap-2 glass-card px-6 py-3 rounded-full mb-10 slide-up border border-green-500/20">
+                <span class="live-dot"></span>
+                <span class="text-sm font-medium"><span id="watching">214</span> apostadores vendo essa página agora</span>
+            </div>
+
+            <!-- Imposing Headline -->
+            <h1 class="font-display font-black text-5xl md:text-7xl lg:text-[5.5rem] mb-8 leading-[1.1] tracking-tighter slide-up" style="animation-delay: 0.2s;">
+                <span class="text-white">Você não precisa de mais uma dica. Precisa de </span>
+                <span class="animated-gradient-text text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-green-500 to-emerald-700">alguém do seu lado</span>
+            </h1>
+            
+            <p class="text-lg md:text-2xl text-gray-300 max-w-4xl mx-auto font-medium slide-up leading-relaxed mb-16" style="animation-delay: 0.4s;">
+                Aqui você <span class="text-money-green">não encontra promessas de dinheiro fácil</span>. Encontra uma comunidade para quem cansou de jogar sozinho. Um ambiente onde informação, atendimento, diversão, suporte e troca de experiências para quem busca <span class="text-money-green border-b border-green-500/50 pb-1">mais informação e jogo responsável</span>.
+            </p>
+
+            <!-- Floating Stats Bar -->
+            <div class="glass-card rounded-2xl p-4 md:p-6 w-full max-w-5xl mx-auto slide-up shadow-2xl shadow-green-900/20" style="animation-delay: 0.6s;">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                    <div class="px-4 text-center flex flex-col items-center justify-center">
+                        <p class="text-4xl lg:text-5xl font-black text-green-500 mb-2 tracking-tighter">+7 anos</p>
+                        <p class="text-xs lg:text-sm text-gray-400 font-medium text-center">Construindo uma comunidade para quem busca informação, atendimento e jogo responsável.</p>
+                    </div>
+                    <div class="px-4 text-center pt-4 md:pt-0 flex flex-col items-center justify-center">
+                        <p class="text-4xl lg:text-5xl font-black text-green-500 mb-2 tracking-tighter">20 mil+</p>
+                        <p class="text-xs lg:text-sm text-gray-400 font-medium text-center">Participantes da nossa comunidade.</p>
+                    </div>
+                    <div class="px-4 text-center pt-4 md:pt-0 flex flex-col items-center justify-center">
+                        <p class="text-4xl lg:text-5xl font-black text-green-500 mb-2 tracking-tighter">Zero</p>
+                        <p class="text-xs lg:text-sm text-gray-400 font-medium text-center">Promessas de lucro garantido. O foco é informação, atendimento e responsabilidade.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="relative z-10 w-full bg-black">
+
+            <!-- Bento Box Grid: Benefícios -->
+            <div class="max-w-6xl mx-auto px-4 mb-24 reveal mt-12">
+                <div class="text-center mb-16">
+                    <span class="inline-block px-4 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-bold uppercase tracking-widest mb-4">Isso não é um grupo de sinais</span>
+                    <h2 class="text-3xl md:text-5xl font-black tracking-tight">É uma comunidade para quem<br>cansou de jogar sozinho</h2>
+                    <p class="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
+                        Imagine fazer parte de uma comunidade onde você pode trocar experiências, esclarecer dúvidas e criar conexões com responsabilidade.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Comunidade Alta Sociedade (Large Span) -->
+                    <div class="md:col-span-2 glass-card p-8 md:p-10 rounded-3xl hover-lift cursor-default border border-white/5 bg-gradient-to-br from-black/60 to-green-900/10 flex flex-col justify-between group overflow-hidden relative">
+                        <div class="absolute -right-20 -top-20 w-64 h-64 bg-green-500/10 blur-3xl rounded-full group-hover:bg-green-500/20 transition-all duration-500"></div>
+                        <div class="w-16 h-16 mb-8 rounded-2xl bg-gradient-to-br from-green-700 to-green-500 flex items-center justify-center shadow-lg shadow-green-500/30 relative z-10">
+                            <i data-lucide="crown" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight">Comunidade Alta Sociedade</h3>
+                            <p class="text-gray-400 text-base md:text-lg leading-relaxed">Chat ativo, lives comigo operando ao vivo e troca de estratégia com quem leva roleta a sério — com meu suporte pessoal, de verdade. Quem entra não sai mais.</p>
+                        </div>
+                    </div>
+
+                    <!-- Atendimento -->
+                    <div class="glass-card p-8 rounded-3xl hover-lift cursor-default border border-white/5 bg-black/40 flex flex-col justify-between group">
+                        <div class="w-14 h-14 mb-6 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-green-500/50 transition-colors">
+                            <i data-lucide="headset" class="w-7 h-7 text-green-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-3">Atendimento Especializado</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Equipe preparada para esclarecer dúvidas, orientar você e oferecer atendimento próximo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Comunidade Exclusiva -->
+                    <div class="glass-card p-8 rounded-3xl hover-lift cursor-default border border-white/5 bg-black/40 flex flex-col justify-between group">
+                        <div class="w-14 h-14 mb-6 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-green-500/50 transition-colors">
+                            <i data-lucide="users" class="w-7 h-7 text-green-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-3">Troca de Experiências</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Compartilhe informações e aprenda com outras pessoas que também acompanham o mercado.</p>
+                        </div>
+                    </div>
+
+                    <!-- App -->
+                    <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6 glass-card rounded-3xl hover-lift cursor-default border border-white/5 bg-black/40 p-1 group overflow-hidden">
+                        <div class="p-7 flex flex-col justify-center">
+                            <div class="w-14 h-14 mb-6 rounded-xl bg-gradient-to-br from-green-700 to-green-500 flex items-center justify-center shadow-lg shadow-green-500/20">
+                                <i data-lucide="smartphone" class="w-7 h-7 text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3">App Hackeando a Bet</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Tenha acesso a análises, estatísticas e relatórios em um só lugar. (Informações, não previsões).</p>
+                        </div>
+                        <div class="hidden md:flex items-center justify-end pr-8">
+                            <!-- Faux App UI mockup -->
+                            <div class="w-48 h-40 bg-black/50 border border-white/10 rounded-xl rounded-b-none border-b-0 overflow-hidden relative shadow-2xl transform translate-y-4 group-hover:translate-y-2 transition-transform duration-500">
+                                <div class="w-full h-8 bg-white/5 flex items-center px-3 gap-1">
+                                    <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                                    <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+                                    <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                                </div>
+                                <div class="p-4 space-y-3">
+                                    <div class="h-2 w-3/4 bg-white/10 rounded"></div>
+                                    <div class="h-2 w-1/2 bg-green-500/50 rounded"></div>
+                                    <div class="h-10 w-full bg-white/5 rounded mt-4"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Conteúdo e Lives -->
+                    <div class="glass-card p-8 rounded-3xl hover-lift cursor-default border border-white/5 bg-black/40 flex flex-col justify-between group">
+                        <div class="w-14 h-14 mb-6 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-green-500/50 transition-colors">
+                            <i data-lucide="play-circle" class="w-7 h-7 text-green-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-3">Conteúdo e Lives</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Ambiente que valoriza o entretenimento, informação e jogo responsável.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mega CTA Banner -->
+                <div class="mt-16 glass-card rounded-3xl p-6 sm:p-10 md:p-14 text-center bg-gradient-to-b from-green-900/20 to-black relative overflow-hidden border border-green-500/20">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-green-500/10 blur-[100px] pointer-events-none"></div>
+                    <h2 class="text-3xl md:text-5xl font-black text-white mb-6 tracking-tight relative z-10">Chega de jogar sozinho.</h2>
+                    <p class="text-gray-300 text-base md:text-lg mb-10 max-w-2xl mx-auto relative z-10">
+                        Faça parte de uma comunidade onde você encontra atendimento especializado, aplicativo exclusivo, conteúdos educativos, lives diárias e um ambiente para trocar experiências com quem também acompanha o mercado.
+                    </p>
+                    <a href="https://t.me/+F7xRIRKHySo1ODMx" target="_blank"
+                        class="premium-button inline-flex items-center justify-center w-full md:w-auto px-6 md:px-12 py-4 md:py-5 rounded-2xl font-bold text-base md:text-lg text-white text-center hover:scale-[1.02] transition-all relative z-10 shadow-2xl shadow-green-500/20">
+                        GARANTIR MINHA VAGA
+                    </a>
+                    <p class="text-center text-xs text-green-500/60 mt-6 font-bold uppercase tracking-widest relative z-10">
+                        Vagas limitadas.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stats Section Removed (Moved to Hero) -->
+
+            <!-- Carousel Section -->
+            <div class="mb-16 reveal w-full max-w-5xl mx-auto">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl md:text-3xl font-bold">Por dentro da <span class="text-money-green">Alta
+                            Sociedade</span></h2>
+                    <p class="text-gray-400 mt-2">Um pouco do que acontece no nosso círculo fechado.</p>
+                </div>
+                <div class="relative group">
+                    <div id="carousel-track"
+                        class="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 hide-scrollbar smooth-scroll items-center px-4 md:px-10">
+                        <div class="snap-center shrink-0 w-[85vw] md:w-auto px-1 md:px-2 flex justify-center">
+                            <img src="assets/01.jpeg" class="w-full md:w-auto h-auto max-h-[60vh] md:max-h-[500px] object-contain rounded-2xl shadow-2xl" alt="Resultado 1">
+                        </div>
+                        <div class="snap-center shrink-0 w-[85vw] md:w-auto px-1 md:px-2 flex justify-center">
+                            <img src="assets/02.jpeg" class="w-full md:w-auto h-auto max-h-[60vh] md:max-h-[500px] object-contain rounded-2xl shadow-2xl" alt="Resultado 2">
+                        </div>
+                        <div class="snap-center shrink-0 w-[85vw] md:w-auto px-1 md:px-2 flex justify-center">
+                            <img src="assets/03.jpeg" class="w-full md:w-auto h-auto max-h-[60vh] md:max-h-[500px] object-contain rounded-2xl shadow-2xl" alt="Resultado 3">
+                        </div>
+                        <div class="snap-center shrink-0 w-[85vw] md:w-auto px-1 md:px-2 flex justify-center">
+                            <img src="assets/04.jpeg" class="w-full md:w-auto h-auto max-h-[60vh] md:max-h-[500px] object-contain rounded-2xl shadow-2xl" alt="Resultado 4">
+                        </div>
+                        <div class="snap-center shrink-0 w-[85vw] md:w-auto px-1 md:px-2 flex justify-center">
+                            <img src="assets/05.jpeg" class="w-full md:w-auto h-auto max-h-[60vh] md:max-h-[500px] object-contain rounded-2xl shadow-2xl" alt="Resultado 5">
+                        </div>
+                    </div>
+                    <!-- Navigation Buttons -->
+                    <button id="prev-slide"
+                        class="absolute -left-2 md:-left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black border border-white/20 text-white flex items-center justify-center md:opacity-0 md:group-hover:opacity-100 transition-all hover:scale-110 hover:border-[var(--primary)] hover:text-[var(--primary)] z-10 shadow-2xl hidden sm:flex">
+                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                    </button>
+                    <button id="next-slide"
+                        class="absolute -right-2 md:-right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black border border-white/20 text-white flex items-center justify-center md:opacity-0 md:group-hover:opacity-100 transition-all hover:scale-110 hover:border-[var(--primary)] hover:text-[var(--primary)] z-10 shadow-2xl hidden sm:flex">
+                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                    </button>
+                    <!-- Carousel Dots -->
+                    <div class="flex justify-center gap-2 mt-6" id="carousel-dots">
+                        <button class="w-2.5 h-2.5 rounded-full bg-green-500 scale-125 transition-all"></button>
+                        <button class="w-2.5 h-2.5 rounded-full bg-white/20 transition-all"></button>
+                        <button class="w-2.5 h-2.5 rounded-full bg-white/20 transition-all"></button>
+                        <button class="w-2.5 h-2.5 rounded-full bg-white/20 transition-all"></button>
+                        <button class="w-2.5 h-2.5 rounded-full bg-white/20 transition-all"></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final CTA -->
+            <div class="text-center reveal px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Chega de jogar sozinho.
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mb-8">
+                    Faça parte de uma comunidade onde você encontra atendimento especializado, aplicativo exclusivo, conteúdos educativos, lives diarias e um ambiente para trocar experiências com quem também acompanha o mercado.
+                </p>
+                <a href="https://t.me/+F7xRIRKHySo1ODMx" target="_blank"
+                    class="premium-button px-6 md:px-12 py-4 md:py-5 rounded-2xl font-bold text-sm md:text-base lg:text-lg text-white inline-flex items-center justify-center gap-3 hover:scale-105 transition-all w-full sm:w-auto max-w-md mx-auto">
+                    QUERO CONHECER A COMUNIDADE
+                </a>
+            </div>
+
+            <!-- Rodapé -->
+            <footer class="relative z-10 text-center pt-16 pb-24 md:pb-10 text-white/40 text-xs">
+                <p class="mb-5 uppercase tracking-[0.2em] font-bold text-white/70">TALYSON &copy; <span id="year"></span></p>
+                        
+                <p class="max-w-xl mx-auto px-4 leading-relaxed mt-5">
+                    🔞 Conteúdo exclusivo para maiores de 18 anos.
+                </p>
+
+                <p class="max-w-xl mx-auto px-4 leading-relaxed mt-3">
+                    Apostas envolvem riscos. Resultados anteriores não garantem resultados futuros. Nunca utilize dinheiro destinado às suas despesas ou compromissos financeiros. Jogue com responsabilidade.
+                </p>
+
+                <p class="max-w-xl mx-auto px-4 leading-relaxed mt-3">
+                    Ministério da Fazenda adverte: aposta não é investimento.
+                </p>
+
+                <p class="max-w-xl mx-auto px-4 leading-relaxed mt-5">
+                    <strong class="text-white/60">SOBRE A COMUNIDADE:</strong> O Hackeando a Bet é uma comunidade voltada ao compartilhamento de informações, conteúdos educativos, análises e suporte aos participantes. Nenhum conteúdo disponibilizado representa promessa ou garantia de lucro.
+                </p>
+
+                <p class="max-w-xl mx-auto px-4 leading-relaxed mt-3">
+                    <strong class="text-white/60">META / FACEBOOK:</strong> Este site não faz parte do Facebook, Instagram ou Meta Platforms, Inc., nem é endossado por essas empresas. As marcas Facebook e Instagram pertencem aos seus respectivos proprietários.
+                </p>
+
+                <p class="max-w-xl mx-auto px-4 leading-relaxed mt-3">
+                    As informações disponibilizadas nesta comunidade têm caráter exclusivamente informativo e educativo. Cada participante é responsável pelas próprias decisões.
+                </p>
+            </footer>
+        </div>
+
+
+
+    <!-- Toast Notifications -->
+    <div id="toast-container"
+        class="fixed bottom-28 md:bottom-8 left-4 md:left-8 z-50 flex flex-col gap-3 pointer-events-none"></div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Reveal on scroll
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 100;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', reveal);
+        reveal();
+
+        // Update watching count
+        function updateWatching() {
+            const min = 150;
+            const max = 320;
+            const watchingEl = document.getElementById('watching');
+            if (watchingEl) {
+                watchingEl.textContent = Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+        }
+        setInterval(updateWatching, 5000);
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Toasts de prova social
+            const names = [
+                "João S.", "Marcos T.", "Pedro M.", "André F.", "Carlos T.",
+                "Lucas R.", "Rafael B.", "Mateus L.", "Fernando A.", "Diego G.",
+                "Vinícius V.", "Bruno N.", "Thiago P.", "Leandro M.", "Gabriel D."
+            ];
+            const toastContainer = document.getElementById('toast-container');
+
+            function showToast() {
+                const randomName = names[Math.floor(Math.random() * names.length)];
+                const toast = document.createElement('div');
+                toast.className = 'glass-card text-white/90 text-[11px] md:text-sm px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3 toast-enter max-w-[220px] md:max-w-sm';
+                toast.innerHTML = `
+                    <div class="w-6 h-6 rounded-full bg-[var(--primary)]/20 flex items-center justify-center shrink-0">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="#22c55e" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <span class="truncate tracking-wide"><strong class="text-white font-semibold">${randomName}</strong> entrou na Alta Sociedade</span>
+                `;
+                toastContainer.appendChild(toast);
+                setTimeout(() => {
+                    toast.classList.remove('toast-enter');
+                    toast.classList.add('toast-leave');
+                    setTimeout(() => toast.remove(), 400);
+                }, 4000);
+                const nextTime = Math.floor(Math.random() * (12000 - 4000 + 1)) + 4000;
+                setTimeout(showToast, nextTime);
+            }
+            setTimeout(showToast, 3000);
+
+            // Carousel Logic
+            const track = document.getElementById('carousel-track');
+            const prevBtn = document.getElementById('prev-slide');
+            const nextBtn = document.getElementById('next-slide');
+            const dots = document.querySelectorAll('#carousel-dots button');
+
+            if (track) {
+                const scrollAmount = window.innerWidth < 768 ? 300 : 400;
+
+                if (prevBtn && nextBtn) {
+                    nextBtn.addEventListener('click', () => {
+                        track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                    });
+
+                    prevBtn.addEventListener('click', () => {
+                        track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                    });
+                }
+
+                if (dots.length > 0) {
+                    const updateDots = () => {
+                        const scrollLeft = track.scrollLeft;
+                        const maxScrollLeft = track.scrollWidth - track.clientWidth;
+                        if (maxScrollLeft <= 0) return;
+                        
+                        let index = Math.round((scrollLeft / maxScrollLeft) * (dots.length - 1));
+                        index = Math.max(0, Math.min(index, dots.length - 1));
+                        
+                        dots.forEach((dot, i) => {
+                            if (i === index) {
+                                dot.classList.remove('bg-white/20');
+                                dot.classList.add('bg-green-500', 'scale-125');
+                            } else {
+                                dot.classList.remove('bg-green-500', 'scale-125');
+                                dot.classList.add('bg-white/20');
+                            }
+                        });
+                    };
+
+                    track.addEventListener('scroll', updateDots, { passive: true });
+                    window.addEventListener('resize', updateDots, { passive: true });
+
+                    dots.forEach((dot, i) => {
+                        dot.addEventListener('click', () => {
+                            const maxScrollLeft = track.scrollWidth - track.clientWidth;
+                            track.scrollTo({ left: (maxScrollLeft / (dots.length - 1)) * i, behavior: 'smooth' });
+                        });
+                    });
+                }
+            }
+        });
+    </script>
+    <script defer
+        src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496"
+        integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ=="
+        data-cf-beacon='{"version":"2024.11.0","token":"5f546eea224749a5a6ba743201b0c6cd","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
