@@ -51,6 +51,7 @@
             animation: orb-float 20s infinite ease-in-out alternate;
             pointer-events: none;
         }
+
         .orb-1 {
             width: 40vw;
             height: 40vw;
@@ -58,6 +59,7 @@
             top: -5%;
             left: -10%;
         }
+
         .orb-2 {
             width: 50vw;
             height: 50vw;
@@ -68,8 +70,13 @@
         }
 
         @keyframes orb-float {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(5%, 5%) scale(1.1); }
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(5%, 5%) scale(1.1);
+            }
         }
 
         /* AAA Glassmorphism */
@@ -78,18 +85,19 @@
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 
+            box-shadow:
                 0 4px 30px -1px rgba(0, 0, 0, 0.5),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        
+
         .hover-lift {
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
         .hover-lift:hover {
             transform: translateY(-5px);
-            box-shadow: 
+            box-shadow:
                 0 12px 32px -4px rgba(34, 197, 94, 0.15),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
             border-color: rgba(34, 197, 94, 0.3);
@@ -101,14 +109,22 @@
             position: relative;
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4), inset 0 1px 0 rgba(255,255,255,0.4);
+            box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4);
             animation: button-pulse 3s infinite;
         }
 
         @keyframes button-pulse {
-            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4), inset 0 1px 0 rgba(255,255,255,0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0), inset 0 1px 0 rgba(255,255,255,0.4); }
-            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0), inset 0 1px 0 rgba(255,255,255,0.4); }
+            0% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(34, 197, 94, 0), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            }
         }
 
         .premium-button::before {
@@ -139,7 +155,7 @@
 
         .premium-button:hover {
             transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 12px 30px rgba(34, 197, 94, 0.6), inset 0 1px 0 rgba(255,255,255,0.6);
+            box-shadow: 0 12px 30px rgba(34, 197, 94, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.6);
             letter-spacing: 0.5px;
         }
 
@@ -207,7 +223,7 @@
             border: 1px solid rgba(34, 197, 94, 0.15);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        
+
         .stat-card:hover {
             transform: translateY(-5px);
             border-color: rgba(34, 197, 94, 0.4);
@@ -294,28 +310,40 @@
     </div>
 
     <!-- Cinematic Hero Section -->
-    <section class="relative w-full min-h-[90vh] flex flex-col items-center justify-center pt-16 md:pt-32 pb-12 md:pb-40 px-4">
+    <section
+        class="relative w-full min-h-[90vh] flex flex-col items-center justify-center pt-16 md:pt-32 pb-12 md:pb-40 px-4">
         <!-- Background Image with Dark Gradient Overlay -->
         <div class="absolute inset-0 z-0">
-            <img src="assets/background.webp" alt="Talyson - Alta Sociedade" class="w-full h-full object-cover object-center opacity-40 mix-blend-screen">
+            <img src="assets/background.webp" alt="Talyson - Alta Sociedade"
+                class="w-full h-full object-cover object-center opacity-40 mix-blend-screen">
             <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/80 to-black"></div>
         </div>
 
         <div class="max-w-6xl mx-auto relative z-10 text-center w-full mt-4 md:mt-10">
             <!-- Live / Social proof indicator -->
-            <div class="inline-flex items-center gap-2 glass-card px-4 sm:px-6 py-2.5 sm:py-3 rounded-full mb-8 sm:mb-10 slide-up border border-green-500/20 max-w-full">
+            <div
+                class="inline-flex items-center gap-2 glass-card px-4 sm:px-6 py-2.5 sm:py-3 rounded-full mb-8 sm:mb-10 slide-up border border-green-500/20 max-w-full">
                 <span class="live-dot shrink-0"></span>
-                <span class="text-xs sm:text-sm font-medium text-left"><span id="watching">214</span> apostadores vendo essa página agora</span>
+                <span class="text-xs sm:text-sm font-medium text-left"><span id="watching">214</span> apostadores vendo
+                    essa página agora</span>
             </div>
 
             <!-- Imposing Headline -->
-            <h1 class="font-display font-black text-3xl sm:text-5xl md:text-7xl lg:text-[5.5rem] mb-8 leading-[1.1] tracking-tighter slide-up" style="animation-delay: 0.2s;">
+            <h1 class="font-display font-black text-3xl sm:text-5xl md:text-7xl lg:text-[5.5rem] mb-8 leading-[1.1] tracking-tighter slide-up"
+                style="animation-delay: 0.2s;">
                 <span class="text-white">Você não precisa de mais uma dica. Precisa de </span>
-                <span class="animated-gradient-text text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-green-500 to-emerald-700">alguém do seu lado</span>
+                <span
+                    class="animated-gradient-text text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-green-500 to-emerald-700">alguém
+                    do seu lado</span>
             </h1>
-            
-            <p class="text-lg md:text-2xl text-gray-300 max-w-4xl mx-auto font-medium slide-up leading-relaxed mb-6" style="animation-delay: 0.4s;">
-                Aqui você <span class="text-money-green">não encontra promessas de dinheiro fácil</span>. Encontra uma comunidade para quem cansou de jogar sozinho. Um ambiente onde informação, atendimento, diversão, suporte e troca de experiências para quem busca <span class="text-money-green border-b border-green-500/50 pb-1">mais informação e jogo responsável</span>.
+
+            <p class="text-lg md:text-2xl text-gray-300 max-w-4xl mx-auto font-medium slide-up leading-relaxed mb-6"
+                style="animation-delay: 0.4s;">
+                Aqui você <span class="text-money-green">não encontra promessas de dinheiro fácil</span>. Encontra uma
+                comunidade para quem cansou de jogar sozinho. Um ambiente onde informação, atendimento, diversão,
+                suporte e troca de experiências para quem busca <span
+                    class="text-money-green border-b border-green-500/50 pb-1">mais informação e jogo
+                    responsável</span>.
             </p>
 
             <!-- Hero CTA Button -->
@@ -327,19 +355,23 @@
             </div>
 
             <!-- Floating Stats Bar -->
-            <div class="glass-card rounded-2xl p-4 md:p-6 w-full max-w-5xl mx-auto slide-up shadow-2xl shadow-green-900/20" style="animation-delay: 0.6s;">
+            <div class="glass-card rounded-2xl p-4 md:p-6 w-full max-w-5xl mx-auto slide-up shadow-2xl shadow-green-900/20"
+                style="animation-delay: 0.6s;">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 divide-y md:divide-y-0 md:divide-x divide-white/10">
                     <div class="px-4 text-center flex flex-col items-center justify-center">
                         <p class="text-4xl lg:text-5xl font-black text-green-500 mb-2 tracking-tighter">+7 anos</p>
-                        <p class="text-xs lg:text-sm text-gray-400 font-medium text-center">Construindo uma comunidade para quem busca informação, atendimento e jogo responsável.</p>
+                        <p class="text-xs lg:text-sm text-gray-400 font-medium text-center">Construindo uma comunidade
+                            para quem busca informação, atendimento e jogo responsável.</p>
                     </div>
                     <div class="px-4 text-center pt-4 md:pt-0 flex flex-col items-center justify-center">
                         <p class="text-4xl lg:text-5xl font-black text-green-500 mb-2 tracking-tighter">20 mil+</p>
-                        <p class="text-xs lg:text-sm text-gray-400 font-medium text-center">Participantes da nossa comunidade.</p>
+                        <p class="text-xs lg:text-sm text-gray-400 font-medium text-center">Participantes da nossa
+                            comunidade.</p>
                     </div>
                     <div class="px-4 text-center pt-4 md:pt-0 flex flex-col items-center justify-center">
                         <p class="text-4xl lg:text-5xl font-black text-green-500 mb-2 tracking-tighter">Zero</p>
-                        <p class="text-xs lg:text-sm text-gray-400 font-medium text-center">Promessas de lucro garantido. O foco é informação, atendimento e responsabilidade.</p>
+                        <p class="text-xs lg:text-sm text-gray-400 font-medium text-center">Promessas de lucro
+                            garantido. O foco é informação, atendimento e responsabilidade.</p>
                     </div>
                 </div>
             </div>
@@ -348,213 +380,261 @@
 
     <div class="relative z-10 w-full bg-black">
 
-            <!-- Bento Box Grid: Benefícios -->
-            <div class="max-w-6xl mx-auto px-4 mb-24 reveal mt-4 md:mt-12">
-                <div class="text-center mb-16">
-                    <span class="inline-block px-4 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-bold uppercase tracking-widest mb-4">Isso não é um grupo de sinais</span>
-                    <h2 class="text-3xl md:text-5xl font-black tracking-tight">É uma comunidade para quem<br>cansou de jogar sozinho</h2>
-                    <p class="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
-                        Imagine fazer parte de uma comunidade onde você pode trocar experiências, esclarecer dúvidas e criar conexões com responsabilidade.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Comunidade Alta Sociedade (Large Span) -->
-                    <div class="md:col-span-2 glass-card p-8 md:p-10 rounded-3xl hover-lift cursor-default border border-white/5 bg-gradient-to-br from-black/60 to-green-900/10 flex flex-col justify-between group overflow-hidden relative">
-                        <div class="absolute -right-20 -top-20 w-64 h-64 bg-green-500/10 blur-3xl rounded-full group-hover:bg-green-500/20 transition-all duration-500"></div>
-                        <div class="flex items-center md:block gap-4 mb-6 md:mb-8 relative z-10">
-                            <div class="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-green-700 to-green-500 flex items-center justify-center shadow-lg shadow-green-500/30 shrink-0 md:mb-8">
-                                <i data-lucide="crown" class="w-6 h-6 md:w-8 md:h-8 text-white"></i>
-                            </div>
-                            <h3 class="text-xl md:text-3xl font-bold text-white tracking-tight">Comunidade Alta Sociedade</h3>
-                        </div>
-                        <div class="relative z-10">
-                            <p class="text-gray-400 text-base md:text-lg leading-relaxed">Chat ativo, lives comigo ao vivo, troca de experiências com quem acompanha o mercado e suporte de verdade. Uma comunidade para quem busca informação, atendimento e jogo responsável.</p>
-                        </div>
-                    </div>
-
-                    <!-- Atendimento -->
-                    <div class="glass-card p-8 rounded-3xl hover-lift cursor-default border border-white/5 bg-black/40 flex flex-col justify-between group">
-                        <div class="flex items-center md:block gap-4 mb-6">
-                            <div class="w-10 h-10 md:w-14 md:h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-green-500/50 transition-colors shrink-0 md:mb-6">
-                                <i data-lucide="headset" class="w-5 h-5 md:w-7 md:h-7 text-green-400"></i>
-                            </div>
-                            <h3 class="text-lg md:text-xl font-bold text-white tracking-tight">Atendimento Especializado</h3>
-                        </div>
-                        <div>
-                            <p class="text-gray-400 text-sm leading-relaxed">Equipe preparada para esclarecer dúvidas, orientar você e oferecer atendimento próximo.</p>
-                        </div>
-                    </div>
-
-                    <!-- Comunidade Exclusiva -->
-                    <div class="glass-card p-8 rounded-3xl hover-lift cursor-default border border-white/5 bg-black/40 flex flex-col justify-between group">
-                        <div class="flex items-center md:block gap-4 mb-6">
-                            <div class="w-10 h-10 md:w-14 md:h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-green-500/50 transition-colors shrink-0 md:mb-6">
-                                <i data-lucide="users" class="w-5 h-5 md:w-7 md:h-7 text-green-400"></i>
-                            </div>
-                            <h3 class="text-lg md:text-xl font-bold text-white tracking-tight">Troca de Experiências</h3>
-                        </div>
-                        <div>
-                            <p class="text-gray-400 text-sm leading-relaxed">Compartilhe informações e aprenda com outras pessoas que também acompanham o mercado.</p>
-                        </div>
-                    </div>
-
-                    <!-- App -->
-                    <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6 glass-card rounded-3xl hover-lift cursor-default border border-white/5 bg-black/40 p-1 group overflow-hidden">
-                        <div class="p-7 flex flex-col justify-center">
-                            <div class="flex items-center md:block gap-4 mb-6">
-                                <div class="w-10 h-10 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-green-700 to-green-500 flex items-center justify-center shadow-lg shadow-green-500/20 shrink-0 md:mb-6">
-                                    <i data-lucide="smartphone" class="w-5 h-5 md:w-7 md:h-7 text-white"></i>
-                                </div>
-                                <h3 class="text-xl md:text-2xl font-bold text-white tracking-tight">App Hackeando a Bet</h3>
-                            </div>
-                            <p class="text-gray-400 text-sm leading-relaxed">Tenha acesso a análises, estatísticas e relatórios em um só lugar. (Informações, não previsões).</p>
-                        </div>
-                        <div class="hidden md:flex items-center justify-end pr-8">
-                            <!-- Faux App UI mockup -->
-                            <div class="w-48 h-40 bg-black/50 border border-white/10 rounded-xl rounded-b-none border-b-0 overflow-hidden relative shadow-2xl transform translate-y-4 group-hover:translate-y-2 transition-transform duration-500">
-                                <div class="w-full h-8 bg-white/5 flex items-center px-3 gap-1">
-                                    <div class="w-2 h-2 rounded-full bg-red-500"></div>
-                                    <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
-                                    <div class="w-2 h-2 rounded-full bg-green-500"></div>
-                                </div>
-                                <div class="p-4 space-y-3">
-                                    <div class="h-2 w-3/4 bg-white/10 rounded"></div>
-                                    <div class="h-2 w-1/2 bg-green-500/50 rounded"></div>
-                                    <div class="h-10 w-full bg-white/5 rounded mt-4"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Conteúdo e Lives -->
-                    <div class="glass-card p-8 rounded-3xl hover-lift cursor-default border border-white/5 bg-black/40 flex flex-col justify-between group">
-                        <div class="flex items-center md:block gap-4 mb-6">
-                            <div class="w-10 h-10 md:w-14 md:h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-green-500/50 transition-colors shrink-0 md:mb-6">
-                                <i data-lucide="play-circle" class="w-5 h-5 md:w-7 md:h-7 text-green-400"></i>
-                            </div>
-                            <h3 class="text-lg md:text-xl font-bold text-white tracking-tight">Conteúdo e Lives</h3>
-                        </div>
-                        <div>
-                            <p class="text-gray-400 text-sm leading-relaxed">Ambiente que valoriza o entretenimento, informação e jogo responsável.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mega CTA Banner -->
-                <div class="mt-16 glass-card rounded-3xl p-6 sm:p-10 md:p-14 text-center bg-gradient-to-b from-green-900/20 to-black relative overflow-hidden border border-green-500/20">
-                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-green-500/10 blur-[100px] pointer-events-none"></div>
-                    <h2 class="text-3xl md:text-5xl font-black text-white mb-6 tracking-tight relative z-10">Chega de jogar sozinho.</h2>
-                    <p class="text-gray-300 text-base md:text-lg mb-10 max-w-2xl mx-auto relative z-10">
-                        Faça parte de uma comunidade onde você encontra atendimento especializado, aplicativo exclusivo, conteúdos educativos, lives diárias e um ambiente para trocar experiências com quem também acompanha o mercado.
-                    </p>
-                    <a href="https://t.me/+F7xRIRKHySo1ODMx" target="_blank"
-                        class="premium-button inline-flex items-center justify-center w-full md:w-auto px-6 md:px-12 py-4 md:py-5 rounded-2xl font-bold text-base md:text-lg text-white text-center hover:scale-[1.02] transition-all relative z-10 shadow-2xl shadow-green-500/20">
-                        GARANTIR MINHA VAGA
-                    </a>
-                    <p class="text-center text-xs text-green-500/60 mt-6 font-bold uppercase tracking-widest relative z-10">
-                        Vagas limitadas.
-                    </p>
-                </div>
+        <!-- Bento Box Grid: Benefícios -->
+        <div class="max-w-6xl mx-auto px-4 mb-24 reveal mt-4 md:mt-12">
+            <div class="text-center mb-16">
+                <span
+                    class="inline-block px-4 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-bold uppercase tracking-widest mb-4">Isso
+                    não é um grupo de sinais</span>
+                <h2 class="text-3xl md:text-5xl font-black tracking-tight">É uma comunidade para quem<br>cansou de jogar
+                    sozinho</h2>
+                <p class="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
+                    Imagine fazer parte de uma comunidade onde você pode trocar experiências, esclarecer dúvidas e criar
+                    conexões com responsabilidade.
+                </p>
             </div>
 
-            <!-- Stats Section Removed (Moved to Hero) -->
-
-            <!-- Carousel Section -->
-            <div class="mb-16 reveal w-full max-w-5xl mx-auto">
-                <div class="text-center mb-8">
-                    <h2 class="text-2xl md:text-3xl font-bold">Por dentro da <span class="text-money-green">Alta
-                            Sociedade</span></h2>
-                    <p class="text-gray-400 mt-2">Um pouco do que acontece no nosso círculo fechado.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Comunidade Alta Sociedade (Large Span) -->
+                <div
+                    class="md:col-span-2 glass-card p-8 md:p-10 rounded-3xl hover-lift cursor-default border border-white/5 bg-gradient-to-br from-black/60 to-green-900/10 flex flex-col justify-between group overflow-hidden relative">
+                    <div
+                        class="absolute -right-20 -top-20 w-64 h-64 bg-green-500/10 blur-3xl rounded-full group-hover:bg-green-500/20 transition-all duration-500">
+                    </div>
+                    <div class="flex items-center md:block gap-4 mb-6 md:mb-8 relative z-10">
+                        <div
+                            class="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-green-700 to-green-500 flex items-center justify-center shadow-lg shadow-green-500/30 shrink-0 md:mb-8">
+                            <i data-lucide="crown" class="w-6 h-6 md:w-8 md:h-8 text-white"></i>
+                        </div>
+                        <h3 class="text-xl md:text-3xl font-bold text-white tracking-tight">Comunidade Alta Sociedade
+                        </h3>
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-gray-400 text-base md:text-lg leading-relaxed">Chat ativo, lives comigo ao vivo,
+                            troca de experiências com quem acompanha o mercado e suporte de verdade. Uma comunidade para
+                            quem busca informação, atendimento e jogo responsável.</p>
+                    </div>
                 </div>
-                <div class="relative group">
-                    <div id="carousel-track"
-                        class="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 hide-scrollbar smooth-scroll items-center px-4 md:px-10">
-                        <div class="snap-center shrink-0 w-[85vw] md:w-auto px-1 md:px-2 flex justify-center">
-                            <img src="assets/01.jpeg" class="w-full md:w-auto h-auto max-h-[60vh] md:max-h-[500px] object-contain rounded-2xl shadow-2xl" alt="Resultado 1">
+
+                <!-- Atendimento -->
+                <div
+                    class="glass-card p-8 rounded-3xl hover-lift cursor-default border border-white/5 bg-black/40 flex flex-col justify-between group">
+                    <div class="flex items-center md:block gap-4 mb-6">
+                        <div
+                            class="w-10 h-10 md:w-14 md:h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-green-500/50 transition-colors shrink-0 md:mb-6">
+                            <i data-lucide="headset" class="w-5 h-5 md:w-7 md:h-7 text-green-400"></i>
                         </div>
-                        <div class="snap-center shrink-0 w-[85vw] md:w-auto px-1 md:px-2 flex justify-center">
-                            <img src="assets/02.jpeg" class="w-full md:w-auto h-auto max-h-[60vh] md:max-h-[500px] object-contain rounded-2xl shadow-2xl" alt="Resultado 2">
+                        <h3 class="text-lg md:text-xl font-bold text-white tracking-tight">Atendimento Especializado
+                        </h3>
+                    </div>
+                    <div>
+                        <p class="text-gray-400 text-sm leading-relaxed">Equipe preparada para esclarecer dúvidas,
+                            orientar você e oferecer atendimento próximo.</p>
+                    </div>
+                </div>
+
+                <!-- Comunidade Exclusiva -->
+                <div
+                    class="glass-card p-8 rounded-3xl hover-lift cursor-default border border-white/5 bg-black/40 flex flex-col justify-between group">
+                    <div class="flex items-center md:block gap-4 mb-6">
+                        <div
+                            class="w-10 h-10 md:w-14 md:h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-green-500/50 transition-colors shrink-0 md:mb-6">
+                            <i data-lucide="users" class="w-5 h-5 md:w-7 md:h-7 text-green-400"></i>
                         </div>
-                        <div class="snap-center shrink-0 w-[85vw] md:w-auto px-1 md:px-2 flex justify-center">
-                            <img src="assets/03.jpeg" class="w-full md:w-auto h-auto max-h-[60vh] md:max-h-[500px] object-contain rounded-2xl shadow-2xl" alt="Resultado 3">
+                        <h3 class="text-lg md:text-xl font-bold text-white tracking-tight">Troca de Experiências</h3>
+                    </div>
+                    <div>
+                        <p class="text-gray-400 text-sm leading-relaxed">Compartilhe informações e aprenda com outras
+                            pessoas que também acompanham o mercado.</p>
+                    </div>
+                </div>
+
+                <!-- App -->
+                <div
+                    class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6 glass-card rounded-3xl hover-lift cursor-default border border-white/5 bg-black/40 p-1 group overflow-hidden">
+                    <div class="p-7 flex flex-col justify-center">
+                        <div class="flex items-center md:block gap-4 mb-6">
+                            <div
+                                class="w-10 h-10 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-green-700 to-green-500 flex items-center justify-center shadow-lg shadow-green-500/20 shrink-0 md:mb-6">
+                                <i data-lucide="smartphone" class="w-5 h-5 md:w-7 md:h-7 text-white"></i>
+                            </div>
+                            <h3 class="text-xl md:text-2xl font-bold text-white tracking-tight">App Hackeando a Bet</h3>
                         </div>
-                        <div class="snap-center shrink-0 w-[85vw] md:w-auto px-1 md:px-2 flex justify-center">
-                            <img src="assets/04.jpeg" class="w-full md:w-auto h-auto max-h-[60vh] md:max-h-[500px] object-contain rounded-2xl shadow-2xl" alt="Resultado 4">
-                        </div>
-                        <div class="snap-center shrink-0 w-[85vw] md:w-auto px-1 md:px-2 flex justify-center">
-                            <img src="assets/05.jpeg" class="w-full md:w-auto h-auto max-h-[60vh] md:max-h-[500px] object-contain rounded-2xl shadow-2xl" alt="Resultado 5">
+                        <p class="text-gray-400 text-sm leading-relaxed">Tenha acesso a análises, estatísticas e
+                            relatórios em um só lugar. (Informações, não previsões).</p>
+                    </div>
+                    <div class="hidden md:flex items-center justify-end pr-8">
+                        <!-- Faux App UI mockup -->
+                        <div
+                            class="w-48 h-40 bg-black/50 border border-white/10 rounded-xl rounded-b-none border-b-0 overflow-hidden relative shadow-2xl transform translate-y-4 group-hover:translate-y-2 transition-transform duration-500">
+                            <div class="w-full h-8 bg-white/5 flex items-center px-3 gap-1">
+                                <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                                <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+                                <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                            </div>
+                            <div class="p-4 space-y-3">
+                                <div class="h-2 w-3/4 bg-white/10 rounded"></div>
+                                <div class="h-2 w-1/2 bg-green-500/50 rounded"></div>
+                                <div class="h-10 w-full bg-white/5 rounded mt-4"></div>
+                            </div>
                         </div>
                     </div>
-                    <!-- Navigation Buttons -->
-                    <button id="prev-slide"
-                        class="absolute -left-2 md:-left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black border border-white/20 text-white flex items-center justify-center md:opacity-0 md:group-hover:opacity-100 transition-all hover:scale-110 hover:border-[var(--primary)] hover:text-[var(--primary)] z-10 shadow-2xl hidden sm:flex">
-                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
-                    </button>
-                    <button id="next-slide"
-                        class="absolute -right-2 md:-right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black border border-white/20 text-white flex items-center justify-center md:opacity-0 md:group-hover:opacity-100 transition-all hover:scale-110 hover:border-[var(--primary)] hover:text-[var(--primary)] z-10 shadow-2xl hidden sm:flex">
-                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
-                    </button>
-                    <!-- Carousel Dots -->
-                    <div class="flex justify-center gap-2 mt-6" id="carousel-dots">
-                        <button class="w-2.5 h-2.5 rounded-full bg-green-500 scale-125 transition-all"></button>
-                        <button class="w-2.5 h-2.5 rounded-full bg-white/20 transition-all"></button>
-                        <button class="w-2.5 h-2.5 rounded-full bg-white/20 transition-all"></button>
-                        <button class="w-2.5 h-2.5 rounded-full bg-white/20 transition-all"></button>
-                        <button class="w-2.5 h-2.5 rounded-full bg-white/20 transition-all"></button>
+                </div>
+
+                <!-- Conteúdo e Lives -->
+                <div
+                    class="glass-card p-8 rounded-3xl hover-lift cursor-default border border-white/5 bg-black/40 flex flex-col justify-between group">
+                    <div class="flex items-center md:block gap-4 mb-6">
+                        <div
+                            class="w-10 h-10 md:w-14 md:h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-green-500/50 transition-colors shrink-0 md:mb-6">
+                            <i data-lucide="play-circle" class="w-5 h-5 md:w-7 md:h-7 text-green-400"></i>
+                        </div>
+                        <h3 class="text-lg md:text-xl font-bold text-white tracking-tight">Conteúdo e Lives</h3>
+                    </div>
+                    <div>
+                        <p class="text-gray-400 text-sm leading-relaxed">Ambiente que valoriza o entretenimento,
+                            informação e jogo responsável.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Final CTA -->
-            <div class="text-center reveal px-4">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">
-                    Chega de jogar sozinho.
-                </h2>
-                <p class="text-gray-400 max-w-2xl mx-auto mb-8">
-                    Faça parte de uma comunidade onde você encontra atendimento especializado, aplicativo exclusivo, conteúdos educativos, lives diarias e um ambiente para trocar experiências com quem também acompanha o mercado.
+            <!-- Mega CTA Banner -->
+            <div
+                class="mt-16 glass-card rounded-3xl p-6 sm:p-10 md:p-14 text-center bg-gradient-to-b from-green-900/20 to-black relative overflow-hidden border border-green-500/20">
+                <div
+                    class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-green-500/10 blur-[100px] pointer-events-none">
+                </div>
+                <h2 class="text-3xl md:text-5xl font-black text-white mb-6 tracking-tight relative z-10">Chega de jogar
+                    sozinho.</h2>
+                <p class="text-gray-300 text-base md:text-lg mb-10 max-w-2xl mx-auto relative z-10">
+                    Faça parte de uma comunidade onde você encontra atendimento especializado, aplicativo exclusivo,
+                    conteúdos educativos, lives diárias e um ambiente para trocar experiências com quem também acompanha
+                    o mercado.
                 </p>
                 <a href="https://t.me/+F7xRIRKHySo1ODMx" target="_blank"
-                    class="premium-button px-6 md:px-12 py-4 md:py-5 rounded-2xl font-bold text-sm md:text-base lg:text-lg text-white inline-flex items-center justify-center gap-3 hover:scale-105 transition-all w-full sm:w-auto max-w-md mx-auto">
-                    QUERO CONHECER A COMUNIDADE
+                    class="premium-button inline-flex items-center justify-center w-full md:w-auto px-6 md:px-12 py-4 md:py-5 rounded-2xl font-bold text-base md:text-lg text-white text-center hover:scale-[1.02] transition-all relative z-10 shadow-2xl shadow-green-500/20">
+                    GARANTIR MINHA VAGA
                 </a>
             </div>
-
-            <!-- Rodapé -->
-            <footer class="relative z-10 text-center pt-16 pb-24 md:pb-10 text-white/40 text-xs">
-                <p class="mb-5 uppercase tracking-[0.2em] font-bold text-white/70">TALYSON &copy; <span id="year"></span></p>
-                        
-                <p class="max-w-xl mx-auto px-4 leading-relaxed mt-5">
-                    🔞 Conteúdo exclusivo para maiores de 18 anos.
-                </p>
-
-                <p class="max-w-xl mx-auto px-4 leading-relaxed mt-3">
-                    Apostas envolvem riscos. Resultados anteriores não garantem resultados futuros. Nunca utilize dinheiro destinado às suas despesas ou compromissos financeiros. Jogue com responsabilidade.
-                </p>
-
-                <p class="max-w-xl mx-auto px-4 leading-relaxed mt-3">
-                    Ministério da Fazenda adverte: aposta não é investimento.
-                </p>
-
-                <p class="max-w-xl mx-auto px-4 leading-relaxed mt-5">
-                    <strong class="text-white/60">SOBRE A COMUNIDADE:</strong> O Hackeando a Bet é uma comunidade voltada ao compartilhamento de informações, conteúdos educativos, análises e suporte aos participantes. Nenhum conteúdo disponibilizado representa promessa ou garantia de lucro.
-                </p>
-
-                <p class="max-w-xl mx-auto px-4 leading-relaxed mt-3">
-                    <strong class="text-white/60">META / FACEBOOK:</strong> Este site não faz parte do Facebook, Instagram ou Meta Platforms, Inc., nem é endossado por essas empresas. As marcas Facebook e Instagram pertencem aos seus respectivos proprietários.
-                </p>
-
-                <p class="max-w-xl mx-auto px-4 leading-relaxed mt-3">
-                    As informações disponibilizadas nesta comunidade têm caráter exclusivamente informativo e educativo. Cada participante é responsável pelas próprias decisões.
-                </p>
-            </footer>
         </div>
+
+        <!-- Stats Section Removed (Moved to Hero) -->
+
+        <!-- Carousel Section -->
+        <div class="mb-16 reveal w-full max-w-5xl mx-auto">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold">Por dentro da <span class="text-money-green">Alta
+                        Sociedade</span></h2>
+                <p class="text-gray-400 mt-2">Um pouco do que acontece no nosso círculo fechado.</p>
+            </div>
+            <div class="relative group">
+                <div id="carousel-track"
+                    class="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 hide-scrollbar smooth-scroll items-center px-4 md:px-10">
+                    <div class="snap-center shrink-0 w-[85vw] md:w-auto px-1 md:px-2 flex justify-center">
+                        <img src="assets/01.jpeg"
+                            class="w-full md:w-auto h-auto max-h-[60vh] md:max-h-[500px] object-contain rounded-2xl shadow-2xl"
+                            alt="Resultado 1">
+                    </div>
+                    <div class="snap-center shrink-0 w-[85vw] md:w-auto px-1 md:px-2 flex justify-center">
+                        <img src="assets/02.jpeg"
+                            class="w-full md:w-auto h-auto max-h-[60vh] md:max-h-[500px] object-contain rounded-2xl shadow-2xl"
+                            alt="Resultado 2">
+                    </div>
+                    <div class="snap-center shrink-0 w-[85vw] md:w-auto px-1 md:px-2 flex justify-center">
+                        <img src="assets/03.jpeg"
+                            class="w-full md:w-auto h-auto max-h-[60vh] md:max-h-[500px] object-contain rounded-2xl shadow-2xl"
+                            alt="Resultado 3">
+                    </div>
+                    <div class="snap-center shrink-0 w-[85vw] md:w-auto px-1 md:px-2 flex justify-center">
+                        <img src="assets/04.jpeg"
+                            class="w-full md:w-auto h-auto max-h-[60vh] md:max-h-[500px] object-contain rounded-2xl shadow-2xl"
+                            alt="Resultado 4">
+                    </div>
+                    <div class="snap-center shrink-0 w-[85vw] md:w-auto px-1 md:px-2 flex justify-center">
+                        <img src="assets/05.jpeg"
+                            class="w-full md:w-auto h-auto max-h-[60vh] md:max-h-[500px] object-contain rounded-2xl shadow-2xl"
+                            alt="Resultado 5">
+                    </div>
+                </div>
+                <!-- Navigation Buttons -->
+                <button id="prev-slide"
+                    class="absolute -left-2 md:-left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black border border-white/20 text-white flex items-center justify-center md:opacity-0 md:group-hover:opacity-100 transition-all hover:scale-110 hover:border-[var(--primary)] hover:text-[var(--primary)] z-10 shadow-2xl hidden sm:flex">
+                    <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                </button>
+                <button id="next-slide"
+                    class="absolute -right-2 md:-right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black border border-white/20 text-white flex items-center justify-center md:opacity-0 md:group-hover:opacity-100 transition-all hover:scale-110 hover:border-[var(--primary)] hover:text-[var(--primary)] z-10 shadow-2xl hidden sm:flex">
+                    <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                </button>
+                <!-- Carousel Dots -->
+                <div class="flex justify-center gap-2 mt-6" id="carousel-dots">
+                    <button class="w-2.5 h-2.5 rounded-full bg-green-500 scale-125 transition-all"></button>
+                    <button class="w-2.5 h-2.5 rounded-full bg-white/20 transition-all"></button>
+                    <button class="w-2.5 h-2.5 rounded-full bg-white/20 transition-all"></button>
+                    <button class="w-2.5 h-2.5 rounded-full bg-white/20 transition-all"></button>
+                    <button class="w-2.5 h-2.5 rounded-full bg-white/20 transition-all"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final CTA -->
+        <div class="text-center reveal px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                Chega de jogar sozinho.
+            </h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-8">
+                Faça parte de uma comunidade onde você encontra atendimento especializado, aplicativo exclusivo,
+                conteúdos educativos, lives diarias e um ambiente para trocar experiências com quem também acompanha o
+                mercado.
+            </p>
+            <a href="https://t.me/+F7xRIRKHySo1ODMx" target="_blank"
+                class="premium-button px-6 md:px-12 py-4 md:py-5 rounded-2xl font-bold text-sm md:text-base lg:text-lg text-white inline-flex items-center justify-center gap-3 hover:scale-105 transition-all w-full sm:w-auto max-w-md mx-auto">
+                QUERO CONHECER A COMUNIDADE
+            </a>
+        </div>
+
+        <!-- Rodapé -->
+        <footer class="relative z-10 text-center pt-16 pb-24 md:pb-10 text-white/40 text-xs">
+            <p class="mb-5 uppercase tracking-[0.2em] font-bold text-white/70">TALYSON &copy; <span id="year"></span>
+            </p>
+
+            <p class="max-w-xl mx-auto px-4 leading-relaxed mt-5">
+                🔞 Conteúdo exclusivo para maiores de 18 anos.
+            </p>
+
+            <p class="max-w-xl mx-auto px-4 leading-relaxed mt-3">
+                Apostas envolvem riscos. Resultados anteriores não garantem resultados futuros. Nunca utilize dinheiro
+                destinado às suas despesas ou compromissos financeiros. Jogue com responsabilidade.
+            </p>
+
+            <p class="max-w-xl mx-auto px-4 leading-relaxed mt-3">
+                Ministério da Fazenda adverte: aposta não é investimento.
+            </p>
+
+            <p class="max-w-xl mx-auto px-4 leading-relaxed mt-5">
+                <strong class="text-white/60">SOBRE A COMUNIDADE:</strong> O Hackeando a Bet é uma comunidade voltada ao
+                compartilhamento de informações, conteúdos educativos, análises e suporte aos participantes. Nenhum
+                conteúdo disponibilizado representa promessa ou garantia de lucro.
+            </p>
+
+            <p class="max-w-xl mx-auto px-4 leading-relaxed mt-3">
+                <strong class="text-white/60">META / FACEBOOK:</strong> Este site não faz parte do Facebook, Instagram
+                ou Meta Platforms, Inc., nem é endossado por essas empresas. As marcas Facebook e Instagram pertencem
+                aos seus respectivos proprietários.
+            </p>
+
+            <p class="max-w-xl mx-auto px-4 leading-relaxed mt-3">
+                As informações disponibilizadas nesta comunidade têm caráter exclusivamente informativo e educativo.
+                Cada participante é responsável pelas próprias decisões.
+            </p>
+        </footer>
+    </div>
 
 
 
     <!-- Toast Notifications -->
     <div id="toast-container"
-        class="fixed bottom-4 md:bottom-8 left-4 md:left-8 z-50 flex flex-col gap-3 pointer-events-none" style="padding-bottom: env(safe-area-inset-bottom);"></div>
+        class="fixed bottom-4 md:bottom-8 left-4 md:left-8 z-50 flex flex-col gap-3 pointer-events-none"
+        style="padding-bottom: env(safe-area-inset-bottom);"></div>
 
     <script>
         // Initialize Lucide Icons
@@ -654,10 +734,10 @@
                         const scrollLeft = track.scrollLeft;
                         const maxScrollLeft = track.scrollWidth - track.clientWidth;
                         if (maxScrollLeft <= 0) return;
-                        
+
                         let index = Math.round((scrollLeft / maxScrollLeft) * (dots.length - 1));
                         index = Math.max(0, Math.min(index, dots.length - 1));
-                        
+
                         dots.forEach((dot, i) => {
                             if (i === index) {
                                 dot.classList.remove('bg-white/20');
